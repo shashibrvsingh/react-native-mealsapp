@@ -2,12 +2,15 @@ import { Pressable, View, Text, StyleSheet, Platform } from "react-native";
 
 function CategoryGridTile({ title, color }) {
   return (
-    <View style={styles.gridItem}>
+    <View style={[styles.gridItem, { backgroundColor: color }]}>
       <Pressable
         android_ripple={{
-          color: "#0d8820",
+          color: "yellow",
         }}
-        style={styles.button}
+        style={({ pressed }) => [
+          styles.button,
+          pressed ? styles.buttonPressed : null,
+        ]}
       >
         <View style={styles.innerContainer}>
           <Text style={styles.title}>{title}</Text>
@@ -34,10 +37,13 @@ const styles = StyleSheet.create({
       height: 2,
     },
     shadowRadius: 8,
-    overflow: "hidden",
+    overflow: Platform.OS === "android" ? "hidden" : "visible",
   },
   button: {
     flex: 1,
+  },
+  buttonPressed: {
+    opacity: 0.5,
   },
   innerContainer: {
     flex: 1,
