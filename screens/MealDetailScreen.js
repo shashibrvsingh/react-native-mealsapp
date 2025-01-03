@@ -15,19 +15,20 @@ import IconButton from "../components/IconButton";
 import { FavouritesContext } from "../store/context/favourites-context";
 
 function MealDetailScreen({ route, navigation }) {
-  const favoiriteMealContext = useContext(FavouritesContext);
+  const favouriteMealContext = useContext(FavouritesContext);
 
   const mealId = route.params.mealId;
   const selectedMeal = MEALS.find((meal) => meal.id === mealId);
 
-  const mealIsFavourite = favoiriteMealContext.ids.includes(mealId);
+  const mealIsFavourite = favouriteMealContext.ids.includes(mealId);
   function changeFavouriteStatusHandler() {
-    if (mealIsFavourite) {
-      favoiriteMealContext.removeFavourite(mealId);
-    } else {
-      favoiriteMealContext.addFavourite(mealId);
-    }
+    console.log("first line");
     console.log("pressed");
+    if (mealIsFavourite) {
+      favouriteMealContext.removeFavourite(mealId);
+    } else {
+      favouriteMealContext.addFavourite(mealId);
+    }
   }
   useLayoutEffect(() => {
     navigation.setOptions({
@@ -36,7 +37,7 @@ function MealDetailScreen({ route, navigation }) {
           <IconButton
             icon={mealIsFavourite ? "star" : "star-outline"}
             color="#41c519"
-            onpress={changeFavouriteStatusHandler}
+            onPress={changeFavouriteStatusHandler}
           />
         );
       },
