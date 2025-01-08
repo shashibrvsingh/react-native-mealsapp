@@ -23,7 +23,7 @@ function DrawerNavigator() {
         drawerActiveBackgroundColor: "#d0e5c6",
         drawerStyle: { backgroundColor: "#dbad4b" },
         headerStyle: {
-          backgroundColor: "#ea7676",
+          backgroundColor: "#ea9999",
         },
         headerTintColor: "white",
         drawerContentStyle: { backgroundColor: "#eb855d" },
