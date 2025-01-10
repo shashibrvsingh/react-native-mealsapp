@@ -24,7 +24,7 @@ function FavoritesScreen() {
 
 const styles = StyleSheet.create({
   rootContainer: {
-    marginBottom: 32,
+    marginBottom: 34,
   },
   text: { fontSize: 34 },
 });
