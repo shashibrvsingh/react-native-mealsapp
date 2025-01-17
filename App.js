@@ -8,9 +8,11 @@ import MealDetailScreen from "./screens/MealDetailScreen";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import FavoritesScreen from "./screens/FavoritesScreen";
 import { Ionicons } from "@expo/vector-icons";
+import ViewPdf from "./screens/ViewPdf";
 // import FavouriteContextProvider from "./store/context/favourites-context";
 import { Provider } from "react-redux";
 import { store } from "./store/context/redux/store";
+import { Button } from "react-native-web";
 const Stack = createNativeStackNavigator();
 
 const Drawer = createDrawerNavigator();
@@ -57,6 +59,7 @@ export default function App() {
   return (
     <>
       <StatusBar style="light" />
+
       {/* <FavouriteContextProvider> */}
       <Provider store={store}>
         <NavigationContainer>
